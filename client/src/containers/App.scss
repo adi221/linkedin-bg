@@ -1,0 +1,94 @@
+@import '../index.scss';
+
+.app {
+  width: 100vw;
+  display: flex;
+  min-height: 100vh;
+
+  &__left {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 90vh;
+    position: relative;
+
+    &-container {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+    }
+
+    h1 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 20px;
+      text-align: center;
+
+      &:before {
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 150px;
+        height: 4px;
+        content: '';
+        left: 50%;
+        margin-left: -80px;
+        background-color: #dfdfdf;
+      }
+
+      svg {
+        vertical-align: middle;
+        fill: #0072b1;
+      }
+    }
+
+    a {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 8px;
+      color: $primary-clr;
+      text-decoration: none;
+      font-weight: 600;
+
+      svg {
+        padding-top: 0.2rem;
+      }
+    }
+  }
+
+  &__right {
+    width: 50vw;
+  }
+
+  &__show-btn {
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    color: #332ba1;
+    z-index: 30;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+    &__right,
+    &__left {
+      width: 100vw;
+    }
+  }
+}

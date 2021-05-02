@@ -1,0 +1,119 @@
+@import '../../index.scss';
+
+.upload-file {
+  background-color: #fff;
+  width: 90vw;
+  max-width: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  h1 {
+    position: relative;
+    margin-bottom: 40px;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 150px;
+      height: 4px;
+      content: '';
+      left: 50%;
+      margin-left: -80px;
+      background-color: #797676;
+    }
+  }
+  svg {
+    fill: rgb(71, 66, 66);
+    font-size: 28px;
+  }
+
+  &__form {
+    margin: 0 auto;
+    width: 400px;
+
+    &-control {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      height: 2.5rem;
+      width: 100%;
+
+      input {
+        visibility: hidden;
+      }
+      span {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 5;
+        height: 2.5rem;
+        padding: 0.5rem 1rem;
+        line-height: 1.5;
+        color: #555;
+        background-color: #fff;
+        border: 1.5px solid rgb(207, 207, 207);
+        border-radius: 0.25rem;
+        box-shadow: inset 0 0.2rem 0.4rem rgba(0, 0, 0, 0.05);
+
+        &:before {
+          position: absolute;
+          top: -0.075rem;
+          right: -0.075rem;
+          bottom: -0.075rem;
+          z-index: 6;
+          display: block;
+          content: 'Browse';
+          height: 2.5rem;
+          padding: 0.5rem 1rem;
+          line-height: 1.5;
+          color: #555;
+          background-color: #d4d4d4;
+          border: 0.075rem solid #ddd;
+          border-radius: 0 0.25rem 0.25rem 0;
+        }
+      }
+    }
+
+    &-button {
+      display: block;
+      margin: 40px auto 10px;
+      outline: none;
+      border: none;
+      background-color: #797676;
+      padding: 10px;
+      width: 200px;
+      cursor: pointer;
+      color: #fff;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}

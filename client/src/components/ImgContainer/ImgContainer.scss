@@ -1,0 +1,12 @@
+@import '../../index.scss';
+
+.img-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: flex-start;
+  padding: 1.5rem 1rem;
+  background-color: $primary-clr;
+  flex-wrap: wrap;
+}
