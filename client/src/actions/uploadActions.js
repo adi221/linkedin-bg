@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {
   SHOW_UPLOAD_MODAL,
-  LIST_ICONS,
+  LIST_UPLOADED_ICONS,
   ADD_ICON_TO_LIST_REQUEST,
   ADD_ICON_TO_LIST_SUCCESS,
   ADD_ICON_TO_LIST_FAIL,
@@ -11,7 +11,7 @@ export const showUploadModal = () => ({ type: SHOW_UPLOAD_MODAL });
 
 export const uploadIcon = formData => async (dispatch, getState) => {
   try {
-    dispatch({ type: ADD_ICON_TO_LIST_REQUEST });
+    // dispatch({ type: ADD_ICON_TO_LIST_REQUEST });
 
     const config = {
       headers: {
@@ -21,20 +21,21 @@ export const uploadIcon = formData => async (dispatch, getState) => {
     const { data } = await axios.post('/upload', formData, config);
     const { fileName, filePath } = data;
 
-    const {
-      product: { allIcons },
-    } = getState();
-
     const newIcon = {
-      id: allIcons.length + 1,
+      id: new Date().getTime(),
       name: fileName,
-      image: `.${filePath}`,
+      img: `.${filePath}`,
     };
     console.log(newIcon);
+
+    dispatch({ type: LIST_UPLOADED_ICONS, payload: newIcon });
+    localStorage.setItem(
+      'uploadedIcons',
+      JSON.stringify(getState().product.uploadedIcons)
+    );
     // const newIcons = [...allIcons].push(newIcon);
     // console.log(newIcons);
-    // dispatch({ type: LIST_ICONS, payload: newIcons });
-    dispatch({ type: ADD_ICON_TO_LIST_SUCCESS });
+    // dispatch({ type: ADD_ICON_TO_LIST_SUCCESS });
   } catch (error) {
     dispatch({
       type: ADD_ICON_TO_LIST_FAIL,

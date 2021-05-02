@@ -6,13 +6,13 @@ import { productReducer } from './reducers/productReducer';
 import { alertReducer } from './reducers/alertReducer';
 import { uploadReducer } from './reducers/uploadReducer';
 
+const middleware = [thunk];
+
 const rootReducer = combineReducers({
   product: productReducer,
   alert: alertReducer,
   upload: uploadReducer,
 });
-
-const middleware = [thunk];
 
 const store = createStore(
   rootReducer,

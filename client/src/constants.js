@@ -2,7 +2,7 @@
 export const ADD_ICON_TO_PRODUCT = 'ADD_ICON_TO_PRODUCT';
 export const UPDATE_BG_COLOR = 'UPDATE_BG_COLOR';
 export const SET_ICONS = 'SET_ICONS';
-export const LIST_ICONS = 'LIST_ICONS';
+export const LIST_UPLOADED_ICONS = 'LIST_UPLOADED_ICONS';
 
 // alert actions
 export const SET_ALERT = 'SET_ALERT';

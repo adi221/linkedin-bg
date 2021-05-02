@@ -1,7 +1,9 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
+const dotenv = require('dotenv');
 
 const app = express();
+dotenv.config();
 
 app.use(fileUpload());
 
@@ -13,12 +15,11 @@ app.post('/upload', (req, res) => {
 
   const file = req.files.file;
 
-  file.mv(`${__dirname}/client/public/uploads/${file.name}`, err => {
+  file.mv(`${__dirname}/client/public/uploads/${file.name}`, async err => {
     if (err) {
       console.error(err);
       return res.status(500).send(err);
     }
-
     res.json({ fileName: file.name, filePath: `/uploads/${file.name}` });
   });
 });
