@@ -20,7 +20,10 @@ app.post('/upload', (req, res) => {
       console.error(err);
       return res.status(500).send(err);
     }
-    res.json({ fileName: file.name, filePath: `/uploads/${file.name}` });
+    res.json({
+      fileName: file.name.substring(0, file.name.lastIndexOf('.')),
+      filePath: `/uploads/${file.name}`,
+    });
   });
 });
 

@@ -1,13 +1,13 @@
 import React from 'react';
-import './ImgContainer.scss';
+import './IconsContainer.scss';
 import { SingleIcon } from '..';
 import { useSelector } from 'react-redux';
 
-const ImgContainer = () => {
+const IconsContainer = () => {
   const { allIcons } = useSelector(state => state.product);
 
   return (
-    <div className='img-container'>
+    <div className='icons-container'>
       {allIcons.map(icon => {
         return <SingleIcon key={icon.id} {...icon} />;
       })}
@@ -15,4 +15,4 @@ const ImgContainer = () => {
   );
 };
 
-export default ImgContainer;
+export default IconsContainer;

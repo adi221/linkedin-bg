@@ -1,5 +1,5 @@
 import Product from './Product/Product';
-import ImgContainer from './ImgContainer/ImgContainer';
+import IconsContainer from './IconsContainer/IconsContainer';
 import SingleIcon from './SingleIcon/SingleIcon';
 import ColorPicker from './ColorPicker/ColorPicker';
 import SingleProductIcon from './SingleProductIcon/SingleProductIcon';
@@ -9,7 +9,7 @@ import UploadFile from './UploadFile/UploadFile';
 
 export {
   Product,
-  ImgContainer,
+  IconsContainer,
   SingleIcon,
   ColorPicker,
   SingleProductIcon,

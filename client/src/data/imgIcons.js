@@ -64,6 +64,41 @@ const imgIcons = [
     name: 'Java',
     img: './images/java.png',
   },
+  {
+    id: 14,
+    name: 'PHP',
+    img: './images/php.jpg',
+  },
+  {
+    id: 15,
+    name: 'MySQL',
+    img: './images/mysql.png',
+  },
+  {
+    id: 16,
+    name: 'Angular',
+    img: './images/angular.png',
+  },
+  {
+    id: 17,
+    name: 'Vue',
+    img: './images/vue.png',
+  },
+  {
+    id: 18,
+    name: 'C++',
+    img: './images/c++.png',
+  },
+  {
+    id: 19,
+    name: 'Flutter',
+    img: './images/flutter.png',
+  },
+  {
+    id: 20,
+    name: 'Electron',
+    img: './images/electron.png',
+  },
 ];
 
 export default imgIcons;

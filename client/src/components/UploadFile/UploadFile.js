@@ -42,7 +42,12 @@ const UploadFile = () => {
         </h1>
         <form className='upload-file__form' onSubmit={submitHandler}>
           <label htmlFor='uploadFile' className='upload-file__form-control'>
-            <input type='file' id='uploadFile' onChange={inputHandler} />
+            <input
+              type='file'
+              id='uploadFile'
+              onChange={inputHandler}
+              accept='image/x-png,image/jpeg'
+            />
             <span>{filename} </span>
           </label>
 

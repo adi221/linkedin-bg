@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './App.scss';
 import {
   Product,
-  ImgContainer,
+  IconsContainer,
   ColorPicker,
   Download,
   Alert,
@@ -39,7 +39,7 @@ function App() {
         </a>
       </div>
       <div className='app__right'>
-        <ImgContainer />
+        <IconsContainer />
       </div>
       <Alert />
       {!show && (
