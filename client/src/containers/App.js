@@ -31,7 +31,7 @@ function App() {
           <Download downloadRef={downloadRef} />
         </div>
         <a
-          href='https://github.com/adi221/linkedin_bg_generator'
+          href='https://github.com/adi221/linkedin-bg-generate'
           target='_blank'
           rel='noopener noreferrer'
         >
