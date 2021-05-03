@@ -26,7 +26,14 @@ app.post('/upload', (req, res) => {
     .substring(0, file.name.lastIndexOf('.'))
     .substring(0, 10);
 
-  file.mv(`${__dirname}/client/public/uploads/${path}`, err => {
+  let uploadsFile;
+  if (process.env.NODE_ENV === 'development') {
+    uploadsFile = `${__dirname}/client/public/uploads/${path}`;
+  } else {
+    uploadsFile = `${__dirname}/client/build/uploads/${path}`;
+  }
+
+  file.mv(uploadsFile, err => {
     if (err) {
       console.error(err);
       return res.status(500).send(err);
@@ -38,7 +45,7 @@ app.post('/upload', (req, res) => {
   });
 });
 
-// For launching purposes
+// For launching
 const _dirname = path.resolve();
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(_dirname, '/client/build')));
