@@ -6,6 +6,8 @@ const path = require('path');
 const app = express();
 dotenv.config();
 
+const PORT = process.env.PORT || 5000;
+
 app.use(fileUpload());
 
 // Upload endpoint
@@ -49,7 +51,7 @@ app.post('/upload', (req, res) => {
 const _dirname = path.resolve();
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(_dirname, '/client/build')));
-  app.get('*', (req, res) => {
+  app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 } else {
@@ -58,4 +60,4 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.listen(5000, () => console.log('Running on port 5000'));
+app.listen(PORT, () => console.log('Running on port 5000'));
