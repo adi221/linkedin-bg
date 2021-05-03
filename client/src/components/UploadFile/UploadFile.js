@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './UploadFile.scss';
+import { Message } from '../../components';
 import { FaUpload, FaTimes } from 'react-icons/fa';
-import { showUploadModal, uploadIcon } from '../../actions/uploadActions';
+import {
+  showUploadModal,
+  uploadIcon,
+  resetAddIconState,
+  removeErrorMsg,
+} from '../../actions/uploadActions';
 
 const UploadFile = () => {
   const [file, setFile] = useState('');
   const [filename, setFilename] = useState('Choose File..');
-  // const [message, setMessage] = useState('');
 
   const dispatch = useDispatch();
+
+  const { loading, success, error } = useSelector(state => state.upload);
 
   const submitHandler = e => {
     e.preventDefault();
@@ -23,6 +30,20 @@ const UploadFile = () => {
     setFile(e.target.files[0]);
     setFilename(e.target.files[0].name);
   };
+
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => dispatch(removeErrorMsg()), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [error, dispatch]);
+
+  useEffect(() => {
+    if (success) {
+      const timer = setTimeout(() => dispatch(resetAddIconState()), 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [success, dispatch]);
 
   return (
     <>
@@ -59,6 +80,9 @@ const UploadFile = () => {
               )}
             </span>
           </button>
+          {loading && <Message type='info'>Loading</Message>}
+          {success && <Message type='success'>Successfully uplaoded</Message>}
+          {error && <Message type='danger'>{error}</Message>}
         </form>
       </div>
     </>
