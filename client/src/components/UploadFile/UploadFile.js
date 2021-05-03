@@ -81,7 +81,7 @@ const UploadFile = () => {
             </span>
           </button>
           {loading && <Message type='info'>Loading</Message>}
-          {success && <Message type='success'>Successfully uplaoded</Message>}
+          {success && <Message type='success'>Successfully uploaded</Message>}
           {error && <Message type='danger'>{error}</Message>}
         </form>
       </div>

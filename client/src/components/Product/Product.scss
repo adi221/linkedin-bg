@@ -4,6 +4,7 @@
   width: 100%;
   position: relative;
   background: url(./images/grid.png);
+  margin-top: 1rem;
   padding-top: 2rem;
   margin-bottom: 2rem;
 
@@ -26,7 +27,7 @@
 
   &__delete {
     position: absolute;
-    top: -60px;
+    top: -2rem;
     left: 46%;
 
     border: none;

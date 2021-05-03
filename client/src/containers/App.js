@@ -8,6 +8,7 @@ import {
   Download,
   Alert,
   UploadFile,
+  RangeSlider,
 } from '../components';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { IoIosAdd } from 'react-icons/io';
@@ -20,6 +21,8 @@ function App() {
   const dispatch = useDispatch();
   const { show } = useSelector(state => state.upload);
 
+  const { size, space } = useSelector(state => state.productSettings);
+
   return (
     <div className='app'>
       <div className='app__left'>
@@ -29,6 +32,8 @@ function App() {
         <div className='app__left-container'>
           <Product downloadRef={downloadRef} />
           <ColorPicker />
+          <RangeSlider {...size} />
+          <RangeSlider {...space} />
           <Download downloadRef={downloadRef} />
         </div>
         <a

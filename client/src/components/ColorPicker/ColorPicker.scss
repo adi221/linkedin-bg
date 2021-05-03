@@ -2,6 +2,15 @@
 
 .color-picker {
   position: relative;
+  margin: 10px;
+  width: 250px;
+
+  h5 {
+    margin-bottom: 5px;
+    color: #888888;
+    text-transform: uppercase;
+  }
+
   &__control {
     display: flex;
     flex-direction: row;
@@ -26,6 +35,6 @@
   }
   &__container {
     position: absolute;
-    top: 31px;
+    top: 52px;
   }
 }

@@ -7,6 +7,7 @@ import Download from './Download/Download';
 import Alert from './Alert/Alert';
 import UploadFile from './UploadFile/UploadFile';
 import Message from './Message/Message';
+import RangeSlider from './RangeSlider/RangeSlider';
 
 export {
   Product,
@@ -18,4 +19,5 @@ export {
   Alert,
   UploadFile,
   Message,
+  RangeSlider,
 };

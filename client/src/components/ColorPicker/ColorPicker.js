@@ -11,6 +11,7 @@ const ColorPicker = () => {
   const { bgColor } = useSelector(state => state.product);
   return (
     <div className='color-picker'>
+      <h5>Background color</h5>
       <div className='color-picker__control'>
         <div
           className='color-picker__control-btn'
