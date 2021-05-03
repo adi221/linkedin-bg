@@ -10,3 +10,9 @@
   background-color: $primary-clr;
   flex-wrap: wrap;
 }
+
+@media (max-width: 1000px) {
+  .icons-container {
+    padding-bottom: 60px;
+  }
+}

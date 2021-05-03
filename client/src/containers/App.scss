@@ -68,18 +68,36 @@
   }
 
   &__show-btn {
-    position: absolute;
-    bottom: 50px;
-    right: 10px;
+    position: fixed;
+    bottom: 10%;
+    right: 20px;
     background-color: #fff;
-    border-radius: 5px;
-    padding: 1rem 2rem;
-    margin: 0.5rem;
-    color: #332ba1;
-    z-index: 30;
+    height: 40px;
+    cursor: pointer;
     border: none;
     outline: none;
-    cursor: pointer;
+    border: 2px solid $primary-clr;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding: 1rem;
+    color: $primary-clr;
+    transition: all 0.3s linear;
+    border: 1px solid transparent;
+
+    svg {
+      font-size: 22px;
+      margin-left: 10px;
+      font-weight: bold;
+    }
+
+    &:hover {
+      background-color: $primary-clr;
+      color: #fff;
+      border: 1px solid #fff;
+    }
   }
 }
 
@@ -90,6 +108,14 @@
     &__right,
     &__left {
       width: 100vw;
+    }
+    h1 {
+      font-size: 30px;
+      white-space: nowrap;
+    }
+    &__show-btn {
+      left: 20px;
+      bottom: 20px;
     }
   }
 }

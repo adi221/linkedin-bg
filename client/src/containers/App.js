@@ -10,6 +10,7 @@ import {
   UploadFile,
 } from '../components';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { IoIosAdd } from 'react-icons/io';
 import { showUploadModal } from '../actions/uploadActions';
 
 function App() {
@@ -47,7 +48,7 @@ function App() {
           className='app__show-btn'
           onClick={() => dispatch(showUploadModal())}
         >
-          Add icon
+          Add Icon <IoIosAdd />
         </button>
       )}
       {show && <UploadFile />}

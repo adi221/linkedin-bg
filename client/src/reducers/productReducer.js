@@ -31,7 +31,7 @@ export const productReducer = (
       return {
         ...state,
         uploadedIcons: [...state.uploadedIcons, action.payload],
-        allIcons: [...state.allIcons, ...state.uploadedIcons],
+        allIcons: [...state.allIcons, action.payload],
       };
     case UPDATE_BG_COLOR:
       console.log('Yes');

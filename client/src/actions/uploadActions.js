@@ -22,7 +22,7 @@ export const uploadIcon = formData => async (dispatch, getState) => {
     const { fileName, filePath } = data;
 
     const newIcon = {
-      id: new Date().getTime(),
+      id: getState().product.allIcons.length + 1,
       name: fileName,
       img: `.${filePath}`,
     };
@@ -33,9 +33,6 @@ export const uploadIcon = formData => async (dispatch, getState) => {
       'uploadedIcons',
       JSON.stringify(getState().product.uploadedIcons)
     );
-    // const newIcons = [...allIcons].push(newIcon);
-    // console.log(newIcons);
-    // dispatch({ type: ADD_ICON_TO_LIST_SUCCESS });
   } catch (error) {
     dispatch({
       type: ADD_ICON_TO_LIST_FAIL,

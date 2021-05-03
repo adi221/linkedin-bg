@@ -14,15 +14,24 @@ app.post('/upload', (req, res) => {
   }
 
   const file = req.files.file;
+  // Ensure path is valid i.e. no spaces
+  let path =
+    file.name.indexOf(' ') === -1
+      ? file.name
+      : file.name.substring(0, file.name.indexOf(' '));
+  // Remove png/jpg suffix and shorten if neccesary
+  let fileName = file.name
+    .substring(0, file.name.lastIndexOf('.'))
+    .substring(0, 10);
 
-  file.mv(`${__dirname}/client/public/uploads/${file.name}`, async err => {
+  file.mv(`${__dirname}/client/public/uploads/${path}`, err => {
     if (err) {
       console.error(err);
       return res.status(500).send(err);
     }
     res.json({
-      fileName: file.name.substring(0, file.name.lastIndexOf('.')),
-      filePath: `/uploads/${file.name}`,
+      fileName,
+      filePath: `/uploads/${path}`,
     });
   });
 });
