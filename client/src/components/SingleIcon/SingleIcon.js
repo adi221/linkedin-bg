@@ -3,13 +3,16 @@ import './SingleIcon.scss';
 import { useDispatch } from 'react-redux';
 import { addIconToProduct } from '../../actions/productActions';
 
-const SingleIcon = ({ id, name, img }) => {
+const SingleIcon = ({ id, name }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className='single-icon' onClick={() => dispatch(addIconToProduct(id))}>
-      <img src={img} alt={name} />
-      <p>{name}</p>
+    <div
+      className='single-icon'
+      onClick={() => dispatch(addIconToProduct({ id, name }))}
+    >
+      <i className={`single-icon devicon-${name} colored `}></i>
+      <p>{name.split('-')[0]}</p>
     </div>
   );
 };

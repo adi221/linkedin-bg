@@ -3,7 +3,6 @@ import './SingleProductIcon.scss';
 import { useSelector } from 'react-redux';
 
 const SingleProductIcon = ({
-  img,
   name,
   id,
   handleDrag,
@@ -14,8 +13,7 @@ const SingleProductIcon = ({
   const { size, space } = useSelector(state => state.productSettings);
 
   const iconStyles = {
-    width: `${size.currentVal}px`,
-    height: `${size.currentVal}px`,
+    fontSize: `${size.currentVal}px`,
     marginLeft: `${space.currentVal}px`,
     marginRight: `${space.currentVal}px`,
   };
@@ -31,7 +29,7 @@ const SingleProductIcon = ({
       onDragEnd={handleDragEnd}
       style={iconStyles}
     >
-      <img src={img} alt={name} />
+      <i className={`single-product-icon devicon-${name} colored `}></i>
     </div>
   );
 };

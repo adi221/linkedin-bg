@@ -4,9 +4,9 @@ const initialState = {
   size: {
     name: 'size',
     title: 'Icon size',
-    currentVal: 40,
-    minVal: 30,
-    maxVal: 50,
+    currentVal: 45,
+    minVal: 35,
+    maxVal: 55,
   },
   space: {
     name: 'space',

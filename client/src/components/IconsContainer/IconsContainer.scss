@@ -1,13 +1,15 @@
 @import '../../index.scss';
 
 .icons-container {
-  height: 100%;
+  height: 100vh;
+  overflow-y: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   align-content: flex-start;
   padding: 1.5rem 1rem;
-  background-color: $primary-clr;
+  background-color: $initial-bg-clr;
+  // background-color: $primary-clr;
   flex-wrap: wrap;
 }
 

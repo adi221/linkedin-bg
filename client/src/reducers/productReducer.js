@@ -1,4 +1,7 @@
 import {
+  GET_ALL_PRODUCTS_REQUEST,
+  GET_ALL_PRODUCTS_SUCCESS,
+  GET_ALL_PRODUCTS_FAIL,
   ADD_ICON_TO_PRODUCT,
   UPDATE_BG_COLOR,
   SET_ICONS,
@@ -13,13 +16,21 @@ const uploadedIconsFromStorage = localStorage.getItem('uploadedIcons')
 export const productReducer = (
   state = {
     productIcons: [],
-    bgColor: '#181717',
+    bgColor: '#434255',
     allIcons: [...allIcons, ...uploadedIconsFromStorage],
+    loading: false,
+    error: false,
     uploadedIcons: uploadedIconsFromStorage,
   },
   action
 ) => {
   switch (action.type) {
+    case GET_ALL_PRODUCTS_REQUEST:
+      return { ...state, loading: true };
+    case GET_ALL_PRODUCTS_SUCCESS:
+      return { ...state, loading: false, allIcons: action.payload };
+    case GET_ALL_PRODUCTS_FAIL:
+      return { ...state, loading: false, error: action.payload };
     case ADD_ICON_TO_PRODUCT:
       return {
         ...state,
