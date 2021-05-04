@@ -9,6 +9,8 @@ import UploadFile from './UploadFile/UploadFile';
 import Message from './Message/Message';
 import RangeSlider from './RangeSlider/RangeSlider';
 import CheckboxInput from './CheckboxInput/CheckboxInput';
+import SearchBar from './SearchBar/SearchBar';
+import SettingsTitle from './SettingsTitle/SettingsTitle';
 
 export {
   Product,
@@ -22,4 +24,6 @@ export {
   Message,
   RangeSlider,
   CheckboxInput,
+  SearchBar,
+  SettingsTitle,
 };

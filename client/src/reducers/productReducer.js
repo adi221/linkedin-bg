@@ -1,11 +1,12 @@
 import {
-  GET_ALL_PRODUCTS_REQUEST,
-  GET_ALL_PRODUCTS_SUCCESS,
-  GET_ALL_PRODUCTS_FAIL,
+  GET_ALL_ICONS_REQUEST,
+  GET_ALL_ICONS_SUCCESS,
+  GET_ALL_ICONS_FAIL,
   ADD_ICON_TO_PRODUCT,
   UPDATE_BG_COLOR,
   SET_ICONS,
   LIST_UPLOADED_ICONS,
+  UPDATE_FILTERED_ICONS,
 } from '../constants';
 // import allIcons from '../data/imgIcons';
 
@@ -18,6 +19,7 @@ export const productReducer = (
     productIcons: [],
     bgColor: '#434255',
     allIcons: [...uploadedIconsFromStorage],
+    filteredIcons: [...uploadedIconsFromStorage],
     loading: false,
     error: false,
     uploadedIcons: uploadedIconsFromStorage,
@@ -25,11 +27,16 @@ export const productReducer = (
   action
 ) => {
   switch (action.type) {
-    case GET_ALL_PRODUCTS_REQUEST:
+    case GET_ALL_ICONS_REQUEST:
       return { ...state, loading: true };
-    case GET_ALL_PRODUCTS_SUCCESS:
-      return { ...state, loading: false, allIcons: action.payload };
-    case GET_ALL_PRODUCTS_FAIL:
+    case GET_ALL_ICONS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        allIcons: action.payload,
+        filteredIcons: action.payload,
+      };
+    case GET_ALL_ICONS_FAIL:
       return { ...state, loading: false, error: action.payload };
     case ADD_ICON_TO_PRODUCT:
       return {
@@ -45,8 +52,10 @@ export const productReducer = (
         allIcons: [...state.allIcons, action.payload],
       };
     case UPDATE_BG_COLOR:
-      console.log('Yes');
       return { ...state, bgColor: action.payload };
+    case UPDATE_FILTERED_ICONS:
+      console.log('Yes');
+      return { ...state, filteredIcons: action.payload };
     default:
       return { ...state };
   }

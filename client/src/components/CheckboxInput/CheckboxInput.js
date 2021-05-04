@@ -1,6 +1,7 @@
 import React from 'react';
 import './CheckboxInput.scss';
 import { useDispatch, useSelector } from 'react-redux';
+import { SettingsTitle } from '../../components';
 import { PRODUCT_SETTINGS_IS_COLOR } from '../../constants';
 
 const CheckboxInput = () => {
@@ -14,14 +15,17 @@ const CheckboxInput = () => {
 
   return (
     <div className='checkbox'>
-      <input
-        type='checkbox'
-        id='checkbox'
-        className='checkbox__input'
-        checked={showColoredIcons}
-        onChange={changeHandler}
-      />
-      <label htmlFor='checkbox'>Colored Icons</label>
+      <SettingsTitle text='Icon color' />
+      <div className='checkbox__container'>
+        <input
+          type='checkbox'
+          id='checkbox'
+          className='checkbox__input'
+          checked={showColoredIcons}
+          onChange={changeHandler}
+        />
+        <label htmlFor='checkbox'>Colored Icons</label>
+      </div>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { productReducer } from './reducers/productReducer';
 import { alertReducer } from './reducers/alertReducer';
 import { uploadReducer } from './reducers/uploadReducer';
-import { productSettingsReducer } from './reducers/productSettingReducer';
+import { productSettingsReducer } from './reducers/productSettingsReducer';
 
 const middleware = [thunk];
 

@@ -1,6 +1,7 @@
 import {
   PRODUCT_SETTINGS_UPDATE,
   PRODUCT_SETTINGS_IS_COLOR,
+  PRODUCT_SETTINGS_SEARCH,
 } from '../constants';
 
 const initialState = {
@@ -19,6 +20,7 @@ const initialState = {
     maxVal: 15,
   },
   showColoredIcons: true,
+  searchQuery: '',
 };
 
 export const productSettingsReducer = (state = initialState, action) => {
@@ -28,6 +30,8 @@ export const productSettingsReducer = (state = initialState, action) => {
       return { ...state, [name]: { ...state[name], currentVal: value } };
     case PRODUCT_SETTINGS_IS_COLOR:
       return { ...state, showColoredIcons: action.payload };
+    case PRODUCT_SETTINGS_SEARCH:
+      return { ...state, searchQuery: action.payload };
     default:
       return { ...state };
   }

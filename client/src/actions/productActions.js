@@ -3,9 +3,9 @@ import {
   UPDATE_BG_COLOR,
   SET_ALERT,
   SET_ICONS,
-  GET_ALL_PRODUCTS_REQUEST,
-  GET_ALL_PRODUCTS_SUCCESS,
-  GET_ALL_PRODUCTS_FAIL,
+  GET_ALL_ICONS_REQUEST,
+  GET_ALL_ICONS_SUCCESS,
+  GET_ALL_ICONS_FAIL,
 } from '../constants';
 
 export const saveNewIcons = payload => ({
@@ -17,7 +17,7 @@ export const setAlert = payload => ({ type: SET_ALERT, payload });
 
 export const getAllIcons = url => async dispatch => {
   try {
-    dispatch({ type: GET_ALL_PRODUCTS_REQUEST });
+    dispatch({ type: GET_ALL_ICONS_REQUEST });
     const res = await fetch(url);
     const { icons } = await res.json();
     console.log(icons);
@@ -27,9 +27,9 @@ export const getAllIcons = url => async dispatch => {
       return { id, name };
     });
 
-    dispatch({ type: GET_ALL_PRODUCTS_SUCCESS, payload: newIcons });
+    dispatch({ type: GET_ALL_ICONS_SUCCESS, payload: newIcons });
   } catch (error) {
-    dispatch({ type: GET_ALL_PRODUCTS_FAIL, payload: error.message });
+    dispatch({ type: GET_ALL_ICONS_FAIL, payload: error.message });
   }
 };
 

@@ -10,6 +10,7 @@ import {
   UploadFile,
   RangeSlider,
   CheckboxInput,
+  SearchBar,
 } from '../components';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { IoIosAdd } from 'react-icons/io';
@@ -31,10 +32,13 @@ function App() {
         </h1>
         <div className='app__left-container'>
           <Product downloadRef={downloadRef} />
-          <ColorPicker />
-          <RangeSlider {...size} />
-          <RangeSlider {...space} />
-          <CheckboxInput />
+          <div className='app__left-container-settings'>
+            <ColorPicker />
+            <CheckboxInput />
+            <RangeSlider {...size} />
+            <RangeSlider {...space} />
+            <SearchBar />
+          </div>
           <Download downloadRef={downloadRef} />
         </div>
         <a

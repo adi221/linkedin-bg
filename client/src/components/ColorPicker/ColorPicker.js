@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './ColorPicker.scss';
 import { SketchPicker } from 'react-color';
+import { SettingsTitle } from '../../components';
 import { updateBgColor } from '../../actions/productActions';
 
 const ColorPicker = () => {
@@ -11,7 +12,7 @@ const ColorPicker = () => {
   const { bgColor } = useSelector(state => state.product);
   return (
     <div className='color-picker'>
-      <h5>Background color</h5>
+      <SettingsTitle text='Background color' />
       <div className='color-picker__control'>
         <div
           className='color-picker__control-btn'

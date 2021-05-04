@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import './RangeSlider.scss';
+import { SettingsTitle } from '../../components';
 import { PRODUCT_SETTINGS_UPDATE } from '../../constants';
 
 const RangeSlider = ({ minVal, maxVal, currentVal, name, title }) => {
@@ -13,7 +14,8 @@ const RangeSlider = ({ minVal, maxVal, currentVal, name, title }) => {
 
   return (
     <div className='range-slider'>
-      <h5>{title}</h5>
+      <SettingsTitle text={title} />
+
       <div className='range-slider__container'>
         <input
           type='range'

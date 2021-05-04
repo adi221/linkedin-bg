@@ -5,21 +5,17 @@
   margin: 10px;
   width: 250px;
 
-  h5 {
-    margin-bottom: 5px;
-    color: #888888;
-    text-transform: uppercase;
-  }
-
   &__control {
     display: flex;
     flex-direction: row;
     justify-content: center;
     min-width: 150px;
+    height: 40px;
+    padding: 2.5px 0;
 
     &-btn {
-      width: 30px;
-      height: 30px;
+      width: 35px;
+      height: 35px;
       cursor: pointer;
       border-radius: 5px 0 0 5px;
       border: 1px solid #686868;
