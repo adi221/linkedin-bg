@@ -7,7 +7,7 @@ import {
   SET_ICONS,
   LIST_UPLOADED_ICONS,
 } from '../constants';
-import allIcons from '../data/imgIcons';
+// import allIcons from '../data/imgIcons';
 
 const uploadedIconsFromStorage = localStorage.getItem('uploadedIcons')
   ? JSON.parse(localStorage.getItem('uploadedIcons'))
@@ -17,7 +17,7 @@ export const productReducer = (
   state = {
     productIcons: [],
     bgColor: '#434255',
-    allIcons: [...allIcons, ...uploadedIconsFromStorage],
+    allIcons: [...uploadedIconsFromStorage],
     loading: false,
     error: false,
     uploadedIcons: uploadedIconsFromStorage,

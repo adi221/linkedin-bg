@@ -10,7 +10,9 @@ const SingleProductIcon = ({
   handleDragOver,
   handleDragEnd,
 }) => {
-  const { size, space } = useSelector(state => state.productSettings);
+  const { size, space, showColoredIcons } = useSelector(
+    state => state.productSettings
+  );
 
   const iconStyles = {
     fontSize: `${size.currentVal}px`,
@@ -29,7 +31,11 @@ const SingleProductIcon = ({
       onDragEnd={handleDragEnd}
       style={iconStyles}
     >
-      <i className={`single-product-icon devicon-${name} colored `}></i>
+      <i
+        className={`single-product-icon devicon-${name} ${
+          showColoredIcons && 'colored'
+        } `}
+      ></i>
     </div>
   );
 };

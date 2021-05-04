@@ -9,13 +9,13 @@ import {
   Alert,
   UploadFile,
   RangeSlider,
+  CheckboxInput,
 } from '../components';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { IoIosAdd } from 'react-icons/io';
 import { showUploadModal } from '../actions/uploadActions';
 
 function App() {
-  // For download
   const downloadRef = useRef();
 
   const dispatch = useDispatch();
@@ -34,6 +34,7 @@ function App() {
           <ColorPicker />
           <RangeSlider {...size} />
           <RangeSlider {...space} />
+          <CheckboxInput />
           <Download downloadRef={downloadRef} />
         </div>
         <a

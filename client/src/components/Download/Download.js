@@ -10,6 +10,8 @@ const Download = ({ downloadRef }) => {
   const [downloadType, setDownloadType] = useState('.png');
 
   const downloadSettings = {
+    width: 1584,
+    height: 396,
     scale: 4,
   };
 

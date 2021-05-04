@@ -8,6 +8,7 @@ import Alert from './Alert/Alert';
 import UploadFile from './UploadFile/UploadFile';
 import Message from './Message/Message';
 import RangeSlider from './RangeSlider/RangeSlider';
+import CheckboxInput from './CheckboxInput/CheckboxInput';
 
 export {
   Product,
@@ -20,4 +21,5 @@ export {
   UploadFile,
   Message,
   RangeSlider,
+  CheckboxInput,
 };

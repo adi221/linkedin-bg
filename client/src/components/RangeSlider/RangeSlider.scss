@@ -1,14 +1,5 @@
 @import '../../index.scss';
 
-$range-handle-color: rgb(255, 255, 255) !default;
-$range-handle-color-hover: rgb(212, 212, 212) !default;
-$range-handle-size: 20px !default;
-
-$range-track-color: rgba(255, 255, 255, 0.314) !default;
-$range-track-height: 2px !default;
-
-$range-label-width: 60px !default;
-
 .range-slider {
   margin: 10px;
   display: inline-block;
@@ -47,7 +38,7 @@ $range-label-width: 60px !default;
         cursor: pointer;
         transition: all 0.15s ease-in-out;
         &:hover {
-          background: $range-handle-color-hover;
+          background: rgb(212, 212, 212);
           transform: scale(1.2);
         }
       }
@@ -56,7 +47,7 @@ $range-label-width: 60px !default;
         height: 20px;
         border: 0;
         border-radius: 50%;
-        background: $range-handle-color;
+        background: rgb(255, 255, 255);
         cursor: pointer;
         transition: all 0.15s ease-in-out;
         &:hover {

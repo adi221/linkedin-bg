@@ -1,4 +1,7 @@
-import { PRODUCT_SETTINGS_UPDATE } from '../constants';
+import {
+  PRODUCT_SETTINGS_UPDATE,
+  PRODUCT_SETTINGS_IS_COLOR,
+} from '../constants';
 
 const initialState = {
   size: {
@@ -15,6 +18,7 @@ const initialState = {
     minVal: 5,
     maxVal: 15,
   },
+  showColoredIcons: true,
 };
 
 export const productSettingsReducer = (state = initialState, action) => {
@@ -22,6 +26,8 @@ export const productSettingsReducer = (state = initialState, action) => {
     case PRODUCT_SETTINGS_UPDATE:
       const { name, value } = action.payload;
       return { ...state, [name]: { ...state[name], currentVal: value } };
+    case PRODUCT_SETTINGS_IS_COLOR:
+      return { ...state, showColoredIcons: action.payload };
     default:
       return { ...state };
   }
