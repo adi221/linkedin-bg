@@ -14,6 +14,7 @@
     flex-direction: column;
     min-height: 90vh;
     position: relative;
+    min-width: 650px;
 
     &-container {
       margin: 0 auto;
@@ -21,16 +22,16 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 80%;
+      width: 100%;
 
       &-settings {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(261px, 1fr));
         justify-content: center;
         justify-items: center;
         align-items: center;
-        width: 100%;
-        gap: 10px 5px;
+        width: 80%;
+        gap: 10px;
       }
     }
 
@@ -127,6 +128,22 @@
     &__show-btn {
       left: 20px;
       bottom: 20px;
+    }
+  }
+}
+
+@media (max-width: 1335px) {
+  .app {
+    &__left {
+      width: 100vw;
+    }
+  }
+}
+
+@media (max-width: 665px) {
+  .app {
+    h1 {
+      display: none;
     }
   }
 }

@@ -53,7 +53,7 @@ function App() {
         <IconsContainer />
       </div>
       <Alert />
-      {!show && (
+      {show && (
         <button
           className='app__show-btn'
           onClick={() => dispatch(showUploadModal())}
