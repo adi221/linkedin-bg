@@ -50,7 +50,6 @@ export const productReducer = (
         allIcons: [...state.allIcons, action.payload],
       };
     case UPDATE_FILTERED_ICONS:
-      console.log('Yes');
       return { ...state, filteredIcons: action.payload };
     default:
       return { ...state };

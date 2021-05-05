@@ -9,6 +9,8 @@ const SingleProductIcon = ({
   handleDrop,
   handleDragOver,
   handleDragEnd,
+  handleMouseEnter,
+  isHovered,
 }) => {
   const { size, space, showColoredIcons } = useSelector(
     state => state.productSettings
@@ -22,13 +24,14 @@ const SingleProductIcon = ({
 
   return (
     <div
-      className='single-product-icon'
+      className={`single-product-icon ${isHovered && 'shake'}`}
       draggable={true}
       id={id}
       onDragOver={handleDragOver}
       onDragStart={handleDrag}
       onDrop={handleDrop}
       onDragEnd={handleDragEnd}
+      onMouseEnter={handleMouseEnter}
       style={iconStyles}
     >
       <i

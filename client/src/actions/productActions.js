@@ -1,6 +1,5 @@
 import {
   ADD_ICON_TO_PRODUCT,
-  UPDATE_BG_COLOR,
   SET_ALERT,
   SET_ICONS,
   GET_ALL_ICONS_REQUEST,
@@ -40,7 +39,12 @@ export const addIconToProduct = icon => (dispatch, getState) => {
   } = getState();
 
   if (productIcons.length === 5) {
-    dispatch(setAlert({ show: true, msg: 'Until 5 Icons' }));
+    dispatch(
+      setAlert({
+        show: true,
+        msg: 'Until 5 Icons. You can delete and order icons by Drag & Drop.',
+      })
+    );
     return;
   }
 

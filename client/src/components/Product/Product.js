@@ -48,6 +48,7 @@ const Product = ({ downloadRef }) => {
 
   const handleDragOver = e => {
     e.preventDefault();
+    setIsHovered(true);
   };
 
   const handleDragEnd = e => {
@@ -56,6 +57,10 @@ const Product = ({ downloadRef }) => {
   };
 
   const handleDragEnter = e => {
+    setIsHovered(true);
+  };
+
+  const handleMouseEnter = e => {
     setIsHovered(true);
   };
 
@@ -125,11 +130,13 @@ const Product = ({ downloadRef }) => {
                   handleDrop={handleDrop}
                   handleDragOver={handleDragOver}
                   handleDragEnd={handleDragEnd}
+                  handleMouseEnter={handleMouseEnter}
+                  isHovered={viewTrash || isHovered}
                 />
               );
             })
         ) : (
-          <h3>Add Icons :)</h3>
+          <h3>Add Icons From The List :)</h3>
         )}
       </div>
     </div>
