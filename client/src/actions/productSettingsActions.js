@@ -1,4 +1,10 @@
-import { PRODUCT_SETTINGS_SEARCH, UPDATE_FILTERED_ICONS } from '../constants';
+import {
+  PRODUCT_SETTINGS_SEARCH,
+  UPDATE_FILTERED_ICONS,
+  UPDATE_BG_COLOR,
+} from '../constants';
+
+export const updateBgColor = payload => ({ type: UPDATE_BG_COLOR, payload });
 
 export const updateSearchQuery = query => (dispatch, getState) => {
   dispatch({ type: PRODUCT_SETTINGS_SEARCH, payload: query });

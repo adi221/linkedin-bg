@@ -2,6 +2,7 @@ import {
   PRODUCT_SETTINGS_UPDATE,
   PRODUCT_SETTINGS_IS_COLOR,
   PRODUCT_SETTINGS_SEARCH,
+  UPDATE_BG_COLOR,
 } from '../constants';
 
 const initialState = {
@@ -21,6 +22,7 @@ const initialState = {
   },
   showColoredIcons: true,
   searchQuery: '',
+  bgColor: '#434255',
 };
 
 export const productSettingsReducer = (state = initialState, action) => {
@@ -32,6 +34,8 @@ export const productSettingsReducer = (state = initialState, action) => {
       return { ...state, showColoredIcons: action.payload };
     case PRODUCT_SETTINGS_SEARCH:
       return { ...state, searchQuery: action.payload };
+    case UPDATE_BG_COLOR:
+      return { ...state, bgColor: action.payload };
     default:
       return { ...state };
   }

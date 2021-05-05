@@ -12,7 +12,7 @@ export const saveNewIcons = payload => ({
   type: SET_ICONS,
   payload,
 });
-export const updateBgColor = payload => ({ type: UPDATE_BG_COLOR, payload });
+
 export const setAlert = payload => ({ type: SET_ALERT, payload });
 
 export const getAllIcons = url => async dispatch => {

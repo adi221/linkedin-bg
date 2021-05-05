@@ -10,8 +10,8 @@
   align-content: flex-start;
   padding: 1.5rem 1rem;
   background-color: $initial-bg-clr;
-  // background-color: $primary-clr;
   flex-wrap: wrap;
+  position: relative;
 }
 
 @media (max-width: 1000px) {

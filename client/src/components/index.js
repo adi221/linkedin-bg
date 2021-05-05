@@ -11,6 +11,7 @@ import RangeSlider from './RangeSlider/RangeSlider';
 import CheckboxInput from './CheckboxInput/CheckboxInput';
 import SearchBar from './SearchBar/SearchBar';
 import SettingsTitle from './SettingsTitle/SettingsTitle';
+import Loader from './Loader/Loader';
 
 export {
   Product,
@@ -26,4 +27,5 @@ export {
   CheckboxInput,
   SearchBar,
   SettingsTitle,
+  Loader,
 };

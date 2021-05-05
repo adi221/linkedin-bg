@@ -10,8 +10,8 @@ const Product = ({ downloadRef }) => {
   const [viewTrash, setViewTrash] = useState(false);
 
   const dispatch = useDispatch();
-  const product = useSelector(state => state.product);
-  const { productIcons, bgColor } = product;
+  const { productIcons } = useSelector(state => state.product);
+  const { bgColor } = useSelector(state => state.productSettings);
 
   const handleDrag = e => {
     setViewTrash(true);

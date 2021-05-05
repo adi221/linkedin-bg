@@ -3,12 +3,10 @@ import {
   GET_ALL_ICONS_SUCCESS,
   GET_ALL_ICONS_FAIL,
   ADD_ICON_TO_PRODUCT,
-  UPDATE_BG_COLOR,
   SET_ICONS,
   LIST_UPLOADED_ICONS,
   UPDATE_FILTERED_ICONS,
 } from '../constants';
-// import allIcons from '../data/imgIcons';
 
 const uploadedIconsFromStorage = localStorage.getItem('uploadedIcons')
   ? JSON.parse(localStorage.getItem('uploadedIcons'))
@@ -17,7 +15,6 @@ const uploadedIconsFromStorage = localStorage.getItem('uploadedIcons')
 export const productReducer = (
   state = {
     productIcons: [],
-    bgColor: '#434255',
     allIcons: [...uploadedIconsFromStorage],
     filteredIcons: [...uploadedIconsFromStorage],
     loading: false,
@@ -33,6 +30,7 @@ export const productReducer = (
       return {
         ...state,
         loading: false,
+        error: false,
         allIcons: action.payload,
         filteredIcons: action.payload,
       };
@@ -51,8 +49,6 @@ export const productReducer = (
         uploadedIcons: [...state.uploadedIcons, action.payload],
         allIcons: [...state.allIcons, action.payload],
       };
-    case UPDATE_BG_COLOR:
-      return { ...state, bgColor: action.payload };
     case UPDATE_FILTERED_ICONS:
       console.log('Yes');
       return { ...state, filteredIcons: action.payload };

@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import './ColorPicker.scss';
 import { SketchPicker } from 'react-color';
 import { SettingsTitle } from '../../components';
-import { updateBgColor } from '../../actions/productActions';
+import { updateBgColor } from '../../actions/productSettingsActions';
 
 const ColorPicker = () => {
   const [showColorPicker, setShowColorPicker] = useState(false);
   const dispatch = useDispatch();
 
-  const { bgColor } = useSelector(state => state.product);
+  const { bgColor } = useSelector(state => state.productSettings);
   return (
     <div className='color-picker'>
       <SettingsTitle text='Background color' />
